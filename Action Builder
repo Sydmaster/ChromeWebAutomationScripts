@@ -1,0 +1,20 @@
+// action builder if xpaths and attributes won't work (needed it while working with modal dialogs)
+      
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("xpath"))); //wait for webelement
+
+			WebElement finishHelp;                                                        //create webelement variable
+			finishHelp =  driver.findElement(By.xpath("xpath"));                          //find and store webelement
+			
+			Actions action;                                                               //create actions variable for locator
+			Actions clickAct;                                                             //create actions variable for click action
+			
+			action = new Actions(driver);                                                 //store driver in action
+			action.moveToElement(finishHelp, 1, 1);                                       //use class "moveToElement" to set mouse location
+			action.build().perform();                                                     //build and perform (mouse set to position; always from middle of the element)
+
+			clickAct = new Actions(driver);                                               //store driver in new action
+			clickAct.click(finishHelp).build().perform();                                 //build and perform click action on webelement
+			
+			finishHelp = null;                                                            //deleting variables for reuse or build it as function
+			action = null;
+			clickAct = null;
