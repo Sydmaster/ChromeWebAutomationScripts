@@ -1,4 +1,4 @@
-// action builder if xpaths and attributes won't work (needed it while working with modal dialogs)
+// action builder if xpaths and attributes won't work
       
       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("xpath"))); //wait for webelement
 
